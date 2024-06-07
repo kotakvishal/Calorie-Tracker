@@ -16,11 +16,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ktk.vishdroid.core.R
+import ktk.vishdroid.core.navigation.Route
+import ktk.vishdroid.core.util.UiEvent
 import ktk.vishdroid.core_ui.LocalSpacing
 import ktk.vishdroid.onboarding_presentation.components.ActionButton
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(
+    onNavigate: (UiEvent.Navigate) -> Unit
+) {
     val spacing = LocalSpacing.current
     Column(
         modifier = Modifier
@@ -38,7 +42,7 @@ fun WelcomeScreen() {
         Spacer(modifier = Modifier.height(spacing.spaceMedium))
         ActionButton(
             text = stringResource(id = R.string.next),
-            onClick = { /*TODO*/ },
+            onClick = { onNavigate(UiEvent.Navigate(Route.AGE)) },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
     }
