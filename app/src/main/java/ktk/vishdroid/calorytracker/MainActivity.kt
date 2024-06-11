@@ -22,6 +22,8 @@ import ktk.vishdroid.calorytracker.ui.theme.CaloryTrackerTheme
 import ktk.vishdroid.core.navigation.Route
 import ktk.vishdroid.onboarding_presentation.age.AgeScreen
 import ktk.vishdroid.onboarding_presentation.gender.GenderScreen
+import ktk.vishdroid.onboarding_presentation.height.HeightScreen
+import ktk.vishdroid.onboarding_presentation.weight.WeightScreen
 import ktk.vishdroid.onboarding_presentation.welcome.WelcomeScreen
 
 @AndroidEntryPoint
@@ -54,10 +56,16 @@ class MainActivity : ComponentActivity() {
                             GenderScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.HEIGHT) {
-
+                            HeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.WEIGHT) {
-
+                            WeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.NUTRIENT_GOAL) {
 
