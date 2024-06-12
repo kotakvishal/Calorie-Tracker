@@ -20,8 +20,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import ktk.vishdroid.calorytracker.navigation.navigate
 import ktk.vishdroid.calorytracker.ui.theme.CaloryTrackerTheme
 import ktk.vishdroid.core.navigation.Route
+import ktk.vishdroid.onboarding_presentation.activity.ActivityScreen
 import ktk.vishdroid.onboarding_presentation.age.AgeScreen
 import ktk.vishdroid.onboarding_presentation.gender.GenderScreen
+import ktk.vishdroid.onboarding_presentation.goal.GoalScreen
 import ktk.vishdroid.onboarding_presentation.height.HeightScreen
 import ktk.vishdroid.onboarding_presentation.weight.WeightScreen
 import ktk.vishdroid.onboarding_presentation.welcome.WelcomeScreen
@@ -71,10 +73,10 @@ class MainActivity : ComponentActivity() {
 
                         }
                         composable(Route.ACTIVITY) {
-
+                            ActivityScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.GOAL) {
-
+                            GoalScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.TRACKER_OVERVIEW) {
 
