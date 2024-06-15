@@ -25,6 +25,7 @@ import ktk.vishdroid.onboarding_presentation.age.AgeScreen
 import ktk.vishdroid.onboarding_presentation.gender.GenderScreen
 import ktk.vishdroid.onboarding_presentation.goal.GoalScreen
 import ktk.vishdroid.onboarding_presentation.height.HeightScreen
+import ktk.vishdroid.onboarding_presentation.nutrient_goal.NutrientGoalScreen
 import ktk.vishdroid.onboarding_presentation.weight.WeightScreen
 import ktk.vishdroid.onboarding_presentation.welcome.WelcomeScreen
 
@@ -70,7 +71,10 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.NUTRIENT_GOAL) {
-
+                            NutrientGoalScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.ACTIVITY) {
                             ActivityScreen(onNavigate = navController::navigate)
