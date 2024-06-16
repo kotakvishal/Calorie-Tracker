@@ -1,5 +1,8 @@
 package ktk.vishdroid.tracker_data.di
 
+import android.app.Application
+import androidx.room.Room
+import ktk.vishdroid.tracker_data.local.TrackerDatabase
 import ktk.vishdroid.tracker_data.remote.OpenFoodApi
 import dagger.Module
 import dagger.Provides
@@ -37,5 +40,15 @@ object TrackerDataModule {
             .client(client)
             .build()
             .create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTrackerDatabase(app: Application): TrackerDatabase {
+        return Room.databaseBuilder(
+            app,
+            TrackerDatabase::class.java,
+            "tracker_db"
+        ).build()
     }
 }
