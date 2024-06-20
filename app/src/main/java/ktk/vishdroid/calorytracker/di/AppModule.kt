@@ -3,12 +3,12 @@ package ktk.vishdroid.calorytracker.di
 import android.app.Application
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import ktk.vishdroid.core.domain.DefaultPreferences
 import ktk.vishdroid.core.domain.preferences.Preferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import ktk.vishdroid.core.data.preferences.DefaultPreferences
 import ktk.vishdroid.core.domain.use_case.FilterOutDigits
 import javax.inject.Singleton
 
