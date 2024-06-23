@@ -53,6 +53,7 @@ object TrackerDataModule {
             "tracker_db"
         ).build()
     }
+
     @Provides
     @Singleton
     fun provideTrackerRepository(
