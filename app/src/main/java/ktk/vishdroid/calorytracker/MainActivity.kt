@@ -28,6 +28,7 @@ import ktk.vishdroid.onboarding_presentation.height.HeightScreen
 import ktk.vishdroid.onboarding_presentation.nutrient_goal.NutrientGoalScreen
 import ktk.vishdroid.onboarding_presentation.weight.WeightScreen
 import ktk.vishdroid.onboarding_presentation.welcome.WelcomeScreen
+import ktk.vishdroid.tracker_presentation.tracker_overview.TrackerOverviewScreen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -83,7 +84,7 @@ class MainActivity : ComponentActivity() {
                             GoalScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.TRACKER_OVERVIEW) {
-
+                            TrackerOverviewScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.SEARCH) {
 
