@@ -1,4 +1,4 @@
-package ktk.vishdroid.calorytrackerprep.ui.theme
+package ktk.vishdroid.calorytracker.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

@@ -15,7 +15,6 @@ import ktk.vishdroid.core.util.UiEvent
 import ktk.vishdroid.core_ui.LocalSpacing
 import ktk.vishdroid.onboarding_presentation.components.ActionButton
 import ktk.vishdroid.onboarding_presentation.components.UnitTextField
-import kotlinx.coroutines.flow.collect
 import ktk.vishdroid.core.R
 
 @Composable

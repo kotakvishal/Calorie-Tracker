@@ -1,7 +1,6 @@
 package ktk.vishdroid.tracker_data.remote.dto
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
 
 data class Product(
     @field:Json(name = "image_front_thumb_url")

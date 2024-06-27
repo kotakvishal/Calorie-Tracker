@@ -1,7 +1,6 @@
 package ktk.vishdroid.core.util
 
 import android.content.Context
-import androidx.annotation.StringRes
 
 sealed class UiText {
     data class DynamicString(val text: String): UiText()

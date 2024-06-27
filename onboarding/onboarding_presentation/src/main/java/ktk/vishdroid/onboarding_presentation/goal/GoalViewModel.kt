@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ktk.vishdroid.core.domain.model.ActivityLevel
 import ktk.vishdroid.core.domain.model.GoalType
 import ktk.vishdroid.core.domain.preferences.Preferences
 import ktk.vishdroid.core.navigation.Route
