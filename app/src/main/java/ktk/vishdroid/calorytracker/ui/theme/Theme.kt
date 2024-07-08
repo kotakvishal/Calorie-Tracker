@@ -7,6 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
+import ktk.vishdroid.calorytrackerprep.ui.theme.Typography
 import ktk.vishdroid.core_ui.Dimensions
 import ktk.vishdroid.core_ui.LocalSpacing
 
