@@ -17,6 +17,7 @@ import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
 import ktk.vishdroid.calorytracker.navigation.navigate
 import ktk.vishdroid.calorytracker.ui.theme.CaloryTrackerTheme
+import ktk.vishdroid.core.domain.preferences.Preferences
 import ktk.vishdroid.core.navigation.Route
 import ktk.vishdroid.onboarding_presentation.activity.ActivityScreen
 import ktk.vishdroid.onboarding_presentation.age.AgeScreen
@@ -29,13 +30,19 @@ import ktk.vishdroid.onboarding_presentation.welcome.WelcomeScreen
 import ktk.vishdroid.tracker_presentation.search.SearchScreen
 import ktk.vishdroid.tracker_presentation.tracker_overview.TrackerOverviewScreen
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @ExperimentalComposeUiApi
 @ExperimentalCoilApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var preferences: Preferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val shouldShowOnboarding = preferences.loadShouldShowOnboarding()
         setContent {
             CaloryTrackerTheme {
                 val navController = rememberNavController()
@@ -46,7 +53,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     NavHost(
                         navController = navController,
-                        startDestination = Route.WELCOME
+                        startDestination = if(shouldShowOnboarding) {
+                            Route.WELCOME
+                        } else Route.TRACKER_OVERVIEW
                     ) {
                         composable(Route.WELCOME) {
                             WelcomeScreen(onNavigate = navController::navigate)
