@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ktk.vishdroid.core.domain.preferences.Preferences
 import ktk.vishdroid.core.domain.use_case.FilterOutDigits
-import ktk.vishdroid.core.navigation.Route
 import ktk.vishdroid.core.util.UiEvent
 import ktk.vishdroid.onboarding_domain.use_case.ValidateNutrients
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -58,7 +57,7 @@ class NutrientGoalViewModel @Inject constructor(
                         preferences.saveProteinRatio(result.proteinRatio)
                         preferences.saveFatRatio(result.fatRatio)
                         viewModelScope.launch {
-                            _uiEvent.send(UiEvent.Navigate(Route.TRACKER_OVERVIEW))
+                            _uiEvent.send(UiEvent.Success)
                         }
                     }
                     is ValidateNutrients.Result.Error -> {

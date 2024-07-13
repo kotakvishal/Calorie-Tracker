@@ -14,8 +14,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import ktk.vishdroid.core.util.UiEvent
 import ktk.vishdroid.core_ui.LocalSpacing
 import ktk.vishdroid.core.R
-import ktk.vishdroid.core.domain.model.ActivityLevel
-import ktk.vishdroid.core.domain.model.Gender
 import ktk.vishdroid.core.domain.model.GoalType
 import ktk.vishdroid.onboarding_presentation.components.ActionButton
 import ktk.vishdroid.onboarding_presentation.components.SelectableButton
@@ -23,14 +21,14 @@ import kotlinx.coroutines.flow.collect
 
 @Composable
 fun GoalScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNextClick: () -> Unit,
     viewModel: GoalViewModel = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
-                is UiEvent.Navigate -> onNavigate(event)
+                is UiEvent.Success -> onNextClick()
                 else -> Unit
             }
         }

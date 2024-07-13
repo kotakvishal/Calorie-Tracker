@@ -4,12 +4,12 @@ import android.app.Application
 import androidx.room.Room
 import ktk.vishdroid.tracker_data.local.TrackerDatabase
 import ktk.vishdroid.tracker_data.remote.OpenFoodApi
+import ktk.vishdroid.tracker_data.repository.TrackerRepositoryImpl
+import ktk.vishdroid.tracker_domain.repository.TrackerRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ktk.vishdroid.tracker_data.repository.TrackerRepositoryImpl
-import ktk.vishdroid.tracker_domain.repository.TrackerRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

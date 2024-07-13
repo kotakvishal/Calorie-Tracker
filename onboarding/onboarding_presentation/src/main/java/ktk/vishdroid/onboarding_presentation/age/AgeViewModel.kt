@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import ktk.vishdroid.core.R
 import ktk.vishdroid.core.domain.preferences.Preferences
 import ktk.vishdroid.core.domain.use_case.FilterOutDigits
-import ktk.vishdroid.core.navigation.Route
 import ktk.vishdroid.core.util.UiEvent
 import ktk.vishdroid.core.util.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -46,7 +45,7 @@ class AgeViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveAge(ageNumber)
-            _uiEvent.send(UiEvent.Navigate(Route.HEIGHT))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

@@ -5,10 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ktk.vishdroid.core.domain.model.ActivityLevel
 import ktk.vishdroid.core.domain.model.GoalType
 import ktk.vishdroid.core.domain.preferences.Preferences
-import ktk.vishdroid.core.navigation.Route
 import ktk.vishdroid.core.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -36,7 +34,7 @@ class GoalViewModel @Inject constructor(
     fun onNextClick() {
         viewModelScope.launch {
             preferences.saveGoalType(selectedGoal)
-            _uiEvent.send(UiEvent.Navigate(Route.NUTRIENT_GOAL))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

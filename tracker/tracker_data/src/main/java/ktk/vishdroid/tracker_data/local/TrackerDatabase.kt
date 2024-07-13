@@ -8,7 +8,7 @@ import ktk.vishdroid.tracker_data.local.entity.TrackedFoodEntity
     entities = [TrackedFoodEntity::class],
     version = 1
 )
-abstract class TrackerDatabase : RoomDatabase() {
+abstract class TrackerDatabase: RoomDatabase() {
 
     abstract val dao: TrackerDao
 }

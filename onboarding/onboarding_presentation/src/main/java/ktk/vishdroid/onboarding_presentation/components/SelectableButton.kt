@@ -17,7 +17,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import ktk.vishdroid.core_ui.LocalSpacing
 
-
 @Composable
 fun SelectableButton(
     text: String,
@@ -29,22 +28,22 @@ fun SelectableButton(
     textStyle: TextStyle = MaterialTheme.typography.button
 ) {
     Box(
-        contentAlignment = Alignment.Center,
-        modifier = modifier
-            .clip(RoundedCornerShape(100.dp))
-            .border(
-                width = 2.dp,
-                color = color,
-                shape = RoundedCornerShape(100.dp)
-            )
-            .background(
-                color = if (isSelected) color else Color.Transparent,
-                shape = RoundedCornerShape(100.dp)
-            )
-            .clickable {
-                onClick()
-            }
-            .padding(LocalSpacing.current.spaceMedium)
+       contentAlignment = Alignment.Center,
+       modifier = modifier
+           .clip(RoundedCornerShape(100.dp))
+           .border(
+               width = 2.dp,
+               color = color,
+               shape = RoundedCornerShape(100.dp)
+           )
+           .background(
+               color = if (isSelected) color else Color.Transparent,
+               shape = RoundedCornerShape(100.dp)
+           )
+           .clickable {
+               onClick()
+           }
+           .padding(LocalSpacing.current.spaceMedium)
     ) {
         Text(
             text = text,

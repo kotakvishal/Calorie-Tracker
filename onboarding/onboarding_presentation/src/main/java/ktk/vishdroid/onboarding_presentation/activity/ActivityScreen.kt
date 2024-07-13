@@ -13,21 +13,22 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
 import ktk.vishdroid.core.util.UiEvent
 import ktk.vishdroid.core_ui.LocalSpacing
+import ktk.vishdroid.core.R
 import ktk.vishdroid.core.domain.model.ActivityLevel
 import ktk.vishdroid.onboarding_presentation.components.ActionButton
 import ktk.vishdroid.onboarding_presentation.components.SelectableButton
-import ktk.vishdroid.core.R
+import kotlinx.coroutines.flow.collect
 
 @Composable
 fun ActivityScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNextClick: () -> Unit,
     viewModel: ActivityViewModel = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
-                is UiEvent.Navigate -> onNavigate(event)
+                is UiEvent.Success -> onNextClick()
                 else -> Unit
             }
         }

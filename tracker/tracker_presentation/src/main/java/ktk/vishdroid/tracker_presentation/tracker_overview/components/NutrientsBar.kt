@@ -13,7 +13,6 @@ import ktk.vishdroid.core_ui.CarbColor
 import ktk.vishdroid.core_ui.FatColor
 import ktk.vishdroid.core_ui.ProteinColor
 
-
 @Composable
 fun NutrientsBar(
     carbs: Int,
